@@ -30,3 +30,6 @@ jobs:
 
       - name: Upload coverage report
         uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          path: coverage/lcov-report
+          name: coverage-report
