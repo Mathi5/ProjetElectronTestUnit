@@ -31,7 +31,7 @@ jobs:
       - name: Upload coverage report
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
-          path: coverage/lcov-report
-          name: coverage-report
+            coverage-file: ./test-results/junit/js-test-results.xml
+            base-coverage-file: ./coverage/master/report.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
