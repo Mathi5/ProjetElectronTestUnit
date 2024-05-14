@@ -8,10 +8,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '18'
 
@@ -23,15 +23,8 @@ jobs:
 
       - name: Upload test results
         uses: actions/upload-artifact@v2
-
         with:
           name: junit-test-results
           path: test-results/junit/js-test-results.xml
 
-      - name: Upload coverage report
-        uses: ArtiomTr/jest-coverage-report-action@v2
-        with:
-          coverage-file: ./test-results/junit/js-test-results.xml
-          base-coverage-file: ./coverage/master/report.json
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: ArtiomTr/jest-coverage-report-action@v2
