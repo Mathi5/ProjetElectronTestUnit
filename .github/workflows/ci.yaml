@@ -23,6 +23,10 @@ jobs:
 
       - name: Upload test results
         uses: actions/upload-artifact@v2
+
         with:
           name: junit-test-results
           path: test-results/junit/js-test-results.xml
+
+      - name: Upload coverage report
+        uses: ArtiomTr/jest-coverage-report-action@v2
