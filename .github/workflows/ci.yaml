@@ -33,3 +33,5 @@ jobs:
         with:
           path: coverage/lcov-report
           name: coverage-report
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
