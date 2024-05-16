@@ -26,5 +26,3 @@ jobs:
         with:
           name: junit-test-results
           path: test-results/junit/js-test-results.xml
-
-      - uses: ArtiomTr/jest-coverage-report-action@v2
